@@ -1,0 +1,29 @@
+body {
+	background-color: gray;
+}
+
+li {
+	font-size: 23px;
+}
+
+h1 {
+	font-family: "Times New Roman", Times, serif;
+}
+
+h2 {
+	font-family: "calibri", Garamond, 'Comic Sans MS';
+}
+
+p {
+	color: gray;
+}
+
+div.organization p {
+	color: black;
+	font-size: 25px;
+}
+
+div.organization li {
+	color: black;
+	font-size: 13px;
+}
