@@ -1,0 +1,27 @@
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.founders {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    color: #fff;
+}
+.founders__image {
+    width: 100%;
+    height: auto;
+    max-width: 320px;
+    transition: 0.3s;
+}
+.founders__item:hover .founders__image {
+    transform: rotate3d(0,1,0,360deg);
+    transition: 0.7s;
+}
+.founders__item {
+    flex: 0 0 30%;
+}
