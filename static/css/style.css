@@ -40,6 +40,10 @@
     color: blue;
   }
 
+  .list-group {
+    width: 500px;
+  }
+
   #dr_skype_cn {
     color: navy;
   }
