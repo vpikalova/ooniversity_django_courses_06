@@ -1,0 +1,23 @@
+.active .navbar-brand
+{
+	font-size: 2em; 
+	text-shadow: 1px 1px 3px #666, -1px -1px 3px #FFF, 1px 1px #666, -1px -1px #FFF; 
+	color:#ddcca3;
+}
+.jumbotron
+{
+	padding-top: 30px;
+  	padding-bottom: 20px;
+  	margin-bottom: 30px;
+  	color: inherit;
+  	background-color: #20A113;
+}
+.container
+{
+	margin: 5%;
+	padding: 10px;
+}
+.body
+{
+	color: #20A113
+}
