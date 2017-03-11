@@ -1,0 +1,77 @@
+.navbar-inverse {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.menu-opener {
+  color: #fff;
+}
+
+.page-header {
+  border-width: 3px;
+}
+
+.persons-container {
+  padding-top: 25px;
+}
+
+.person {
+  padding: 0 15px 30px;
+}
+
+.person .thumbnail {
+  width: 100%;
+  margin: 0;
+}
+
+.person-info {
+  display: table;
+  width: 100%;
+  margin: 0;
+}
+
+.person-info__row {
+  display: table-row;
+}
+
+.person-info__row > * {
+  display: table-cell;
+  padding: 4px 0;
+}
+
+.person-info__title:after {
+  content: ':';
+}
+
+@media (min-width:600px) {
+  .persons-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .person {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 50%;
+    flex: 1 0 50%;
+
+    max-width: 50%;
+  }
+}
+
+@media (min-width:1200px) {
+  .person {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 25%;
+    flex: 1 0 25%;
+
+    max-width: 25%;
+  }
+}
