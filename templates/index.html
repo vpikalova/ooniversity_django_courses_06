@@ -4,11 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>IT-Bursa Python/Django 06</title>
+    <title>TechBursa Python/Django :: Main</title>
+
+	<link rel="shortcut icon" href="favicon.ico">
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="../static/css/bootstrap.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
     <!-- Вставка HTML5 поєднується з Respond.js для підтримки в IE8 елементів HTML5 та медіа-запитів -->
     <!-- ЗАСТЕРЕЖЕННЯ: файл Respond.js не працює, якщо ви проглядаєте сторінку відкривши її з файлової системи -->
     <!--[if lt IE 9]>
@@ -17,12 +19,106 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Привіт, світ!</h1>
-    <p>параграф</p>
+	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+	  <div class="container">
+	    <strong><a class="navbar-brand" href="index.html">TechBursa</a></strong>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Main</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
 
+    </div>
+	</nav>	
+
+	<div class="container">
+	  <div class="jumbotron">
+	    	<h1>Вітаємо сайті <a href="#">&laquoTechBursa&raquo!</a></h1>
+			<h2><strong>Description</strong> <small>(опис курсу):</small></h2>
+			<p class="greetings">Цей сайт присвячено курсу інтенсивного, практичного навчання WEB-програмуванню на мові Python з використанням фреймворку Django. 
+			А також освоєнню і застосуанню найновіших методів та інструментів ефективної розробки, впровадження та розгортання
+			WEB-проектів та сайтів. <br>
+			<a href="#">TechBursa!</a> - це передові методи навчання! <br>
+			<strong>Приєднуйтесь до нашої спільноти!</strong>
+			</p>
+	  </div>
+	</div>
+
+	<div class="container">
+		<div class="panel panel-primary"> 
+			  <div class="panel-heading"> 
+				<h2 class="panel-title" align="center"><h2 class="Program">Program (програма курсу):</h2></h2>
+			  </div> 
+			  <div class="panel-body">
+				<div class="row">
+				  <div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+					  <img src="../static/images/python.png" alt="Python">
+					  <div class="caption">
+						<h4>Базовий курс Python</h4>
+						<ol class="num" >
+							<li>Основи <a href="https://www.python.org">Python</a></li>
+							<li>Функції і модулі</li>
+							<li>ООП</li>
+							<li>Робота з файлами та датами</li>
+						</ol>
+						<p><a href="#" class="btn btn-primary" role="button">Детальніше...</a></p>
+					  </div>
+					</div>
+				  </div>
+				  <div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+					  <img src="../static/images/django.png" alt="Django">
+					  <div class="caption">
+						<h4>Фреймворк Django</h4>
+						<ol class="num" >
+							<li>Основи WEB</li>
+							<li>Основи HTML та теги</li>
+							<li>CSS</li>
+							<li>Робота з <a href="http://getbootstrap.com">Bootstrap</a></li>
+						</ol>
+						<p><a href="#" class="btn btn-primary" role="button">Детальніше...</a></p>
+					  </div>
+					</div>
+				  </div>
+				  <div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+					  <img src="../static/images/git.png" alt="GIT">
+					  <div class="caption">
+						<h4>GIT та github</h4>
+						<ol class="num" >
+							<li>Поняття версіонування</li>
+							<li>Вступ до <a href=https://git-scm.com>GIT</a></li>
+							<li>Основні команди GIT</li>
+							<li>Робота з <a href="https://github.com">github</a></li>
+						</ol>
+						<p><a href="#" class="btn btn-primary" role="button">Детальніше...</a></p>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+		</div>
+	</div>
+
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted">&copy <span class="foot">&nbsp :: SuperDuper company :: &nbsp</span>
+			<a href="mailto:figavam@dot.com?Subject=Super%20Duper" target="_top">
+				<span class="glyphicon glyphicon glyphicon-envelope" aria-hidden="true"></span> - dipperside.
+			</a> 
+		</p>
+      </div>
+    </footer>	
+
+
+
+	
     <!-- jQuery (потрібно для JavaScript плагінів Bootstrap) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Підключення мінімізованої збірки всіх плагінів jQuery. Можна підключати додаткові плагіни, якщо потрібно -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
   </body>
 </html>
