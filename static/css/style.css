@@ -1,8 +1,10 @@
-.active .navbar-brand
+
+.active ,.navbar-brand, .collapse, .sr-only
 {
-	font-size: 2em; 
+	font-size: 25px; 
 	text-shadow: 1px 1px 3px #666, -1px -1px 3px #FFF, 1px 1px #666, -1px -1px #FFF; 
-	color:#ddcca3;
+	color: #EEE8AA;
+	background: #EEE8AA;
 }
 .jumbotron
 {
@@ -10,14 +12,16 @@
   	padding-bottom: 20px;
   	margin-bottom: 30px;
   	color: inherit;
-  	background-color: #20A113;
+  	background-color: #EEE8AA;
 }
 .container
 {
 	margin: 5%;
 	padding: 10px;
 }
-.body
+#welcome_about
 {
-	color: #20A113
+	font-size: 30px;
+	text-shadow:4px 4px 5px #AAAAAA;
+	color:#000;
 }
