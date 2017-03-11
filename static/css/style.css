@@ -1,0 +1,49 @@
+  .navbar-brand {
+	  padding-left: 200px;
+	}
+
+  .contact_name {
+    color: blue;
+  }
+
+  .skype_cn {
+    color: red;
+  }
+
+  .some_mail {
+    color: red;
+  }
+   
+  .dr_mail { 
+    color: navy;
+  }
+
+  .some_phone {
+    font-weight: bold;
+    color: red;
+  }
+
+  .dr_phone {
+    color: navy;
+  }
+
+  #dr_skype_cn {
+    color: navy;
+  }
+
+  #dr_contact_name {
+    font-weight: bold;
+    color: navy;
+  }
+
+  #logo_itBursa {
+    height: 28px;
+  }
+
+  #rad_name {
+    font-weight: bold;
+    color: navy;
+  }
+  
+
+
