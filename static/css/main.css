@@ -25,3 +25,47 @@ body {
 .founders__item {
     flex: 0 0 30%;
 }
+.table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.table__row {
+    display: flex;
+    justify-content: space-between;
+    background: #F4C63D;
+    margin-bottom: 3px;
+    padding: 10px 20px;
+}
+.table__row:hover {
+    background: #F4F63D;
+}
+.table__row--head {
+    background: #c0a16b;
+}
+.table__cell {
+    flex: 1 1 10%;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+.table__cell--long {
+    flex-basis: 60%;
+}
+.table__main-holder {
+    display: flex;
+    justify-content: space-between;
+}
+.table__wrapper {
+    flex: 1 1 100%;
+    margin: 0 15px;
+}
+.student-detail__image {
+    max-width: 320px;
+    height: auto;
+}
+@media screen and (max-width: 768px) {
+    .table__main-holder {
+        flex-wrap: wrap;
+    }
+}
