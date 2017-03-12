@@ -25,3 +25,22 @@
 	text-shadow:4px 4px 5px #AAAAAA;
 	color:#000;
 }
+body
+{
+	background-color: #0F0E0E
+}
+
+.panel, .panel-heading, .panel-default
+{
+  background-color: #EEE8AA;
+  
+}
+h4
+{
+	font-size: 25px;
+	color: #807C7C
+}
+p
+{
+	color: #807C7C
+}
