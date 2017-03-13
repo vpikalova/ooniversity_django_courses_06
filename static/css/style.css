@@ -46,12 +46,16 @@ p
 }
 #student_detail_panel
 {
-	width: 20%;
+	width: 30%;
+	float : left;
 	
 }
 #students_about
 {
-	width: 70%;
+	width: 60%;
+	float: right;
+	margin-right:20px;
+	margin-top:245px;
 }
 .well {
 	width: 15%;
