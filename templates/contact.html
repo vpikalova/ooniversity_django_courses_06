@@ -24,9 +24,9 @@
 
   <body>
   <ul class="nav nav-pills">
-    <li role="presentation"><a href="index.html">Main</a></li>
-    <li role="presentation" class="active"><a href="contact.html">Contacts</a></li>
-   <li role="presentation"><a href="student_list.html">Students</a></li>
+    <li role="presentation"><a href="{% url 'index' %}">Main</a></li>
+    <li role="presentation" class="active"><a href="{% url 'contact' %}">Contacts</a></li>
+   <li role="presentation"><a href="{% url 'student_list' %}">Students</a></li>
   </ul>
 
   <h2 selector="selector6">Director</h2>
@@ -75,8 +75,8 @@
 
   <nav aria-label="...">
     <ul class="pager">
-      <li class="selector_li"><a href="index.html">Previous</a></li>
-      <li class="selector_li"><a href="student_list.html">Next</a></li>
+      <li class="selector_li"><a href="{% url 'index' %}">Previous</a></li>
+      <li class="selector_li"><a href="{% url 'student_list' %}">Next</a></li>
     </ul>
   </nav>
   </div>
