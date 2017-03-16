@@ -24,9 +24,9 @@
 
   <body>
   <ul class="nav nav-pills">
-    <li role="presentation"><a href="index.html">Main</a></li>
-    <li role="presentation"><a href="contact.html">Contacts</a></li>
-    <li role="presentation" class="active"><a href="student_list.html">Students</a></li>
+    <li role="presentation"><a href="{% url 'index' %}">Main</a></li>
+    <li role="presentation"><a href="{% url 'contact' %}">Contacts</a></li>
+    <li role="presentation" class="active"><a href="{% url 'student_list' %}">Students</a></li>
   </ul>
 
   <div class="container">
@@ -44,7 +44,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a href="student_detail.html">1</a></td>
+        <td><a href="{% url 'student_detail' %}">1</a></td>
         <td>Persianova</td>
         <td>Olena</td>
         <td>Україна, м.Харків, вул.Іванова, б.36, кв.3</td>
@@ -85,7 +85,7 @@
 
   <nav aria-label="...">
     <ul class="pager">
-      <li><a href="contact.html">Previous</a></li>
+      <li><a href="{% url 'contact' %}">Previous</a></li>
       <li class="next disabled"><a href="#">Next</a></li>
     </ul>
   </nav>
