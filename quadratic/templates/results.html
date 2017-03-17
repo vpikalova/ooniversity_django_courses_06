@@ -38,7 +38,7 @@
           <li>a = {{ a }}</li>
           {% if not a %} <p><strong>коэффициент не определен</strong></p>{% endif %}
           {% if a_isdigit == False %} <p><strong>коэффициент не целое число</strong></p>{% endif %}
-          {% if a_not_0 == False %} <p><strong>коэффициент при первом слагаемом уравнении не может быть равным нулю</strong></p>{% endif %}
+          {% if a_not_0 == False %} <p><strong>коэффициент при первом слагаемом уравнения не может быть равным нулю</strong></p>{% endif %}
           <li>b = {{ b }}</li>
           {% if not b %} <p><strong>коэффициент не определен</strong></p>{% endif %}
           {% if b_isdigit == False %} <p><strong>коэффициент не целое число</strong></p>{% endif %}
@@ -46,7 +46,7 @@
           {% if not c %} <p><strong>коэффициент не определен</strong></p>{% endif %}
           {% if c_isdigit == False %} <p><strong>коэффициент не целое число</strong></p>{% endif %}
         </ul>
-      {% if D_status %}<p><strong>Дискриминанат: {{ D }}</strong></p>{% endif %}
+      {% if D_status %}<p><strong>Дискриминант: {{ D }}</strong></p>{% endif %}
 
       {% if D > 0 %}<p><strong>Квадратное уравнение имеет два действительных корня: x1 = {{ x1 }}, x2 = {{ x2 }}</strong></p>{% endif %}
       {% if D == 0 %}<p><strong>Дискриминант равен нулю, квадратное уравнение имеет один действительный корень: x1 = x2 = {{ x1 }}</strong></p>{% endif %}
