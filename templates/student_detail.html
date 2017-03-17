@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TechBursa Python/Django 06 :: Personal data</title>
 
-	<link rel="shortcut icon" href="favicon.ico">
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
 
     <!-- Bootstrap -->
-    <link href="../static/css/bootstrap.css" rel="stylesheet">
-    <link href="../static/css/style.css" rel="stylesheet">	
-	<link href="../static/css/font-awesome.min.css" rel="stylesheet">	
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet"> 
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">      
 	
     <!-- Вставка HTML5 поєднується з Respond.js для підтримки в IE8 елементів HTML5 та медіа-запитів -->
     <!-- ЗАСТЕРЕЖЕННЯ: файл Respond.js не працює, якщо ви проглядаєте сторінку відкривши її з файлової системи -->
@@ -23,12 +24,12 @@
   <body>
 	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
 	  <div class="container">
-	    <strong><a class="navbar-brand" href="index.html" name="logo">TechBursa</a></strong>
+	    <strong><a class="navbar-brand" href="{% url 'index' %}" name="logo">TechBursa</a></strong>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href=index.html>Main</a></li>
-            <li><a href="contact.html">Contacts</a></li>
-            <li class="active"><a href="student_list.html">Students</a></li>
+            <li><a href={% url 'index' %}>Main</a></li>
+            <li><a href="{% url 'contact' %}">Contacts</a></li>
+            <li class="active"><a href="{% url 'student_list' %}">Students</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -148,7 +149,7 @@
     <!-- jQuery (потрібно для JavaScript плагінів Bootstrap) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Підключення мінімізованої збірки всіх плагінів jQuery. Можна підключати додаткові плагіни, якщо потрібно -->
-    <script src="../static/js/bootstrap.js"></script>
-    <script src="../static/js/holder.js"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/holder.js' %}"></script>
     </body>
 </html>
