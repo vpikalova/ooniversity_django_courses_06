@@ -128,7 +128,7 @@ STATICFILES_DIRS = [
 TEMPLATES = [
   {'APP_DIRS': True,
   'BACKEND': 'django.template.backends.django.DjangoTemplates',
-  'DIRS': [os.path.join(BASE_DIR, 'templates'),],
+  'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'quadratic/templates'),],
   'OPTIONS': {'context_processors': ['django.template.context_processors.debug',
                                      'django.template.context_processors.request',
                                      'django.contrib.auth.context_processors.auth',

@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from pybursa.views import index, contact, student_list, student_detail
+from quadratic.views import quadratic_results
 
 urlpatterns = [
     url(r'^$', index, name='index' ),
@@ -24,4 +25,5 @@ urlpatterns = [
     url(r'student_detail/', student_detail, name='student_detail'),
     url(r'^polls/', include('polls.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^quadratic/results/', include('quadratic.urls'))
 ]
