@@ -1,0 +1,52 @@
+.contacts{
+font-weight:600;
+line-height: 1.2;
+font: monospace;
+}
+.email{
+font-style: italic;
+
+}
+
+.phone{
+text-shadow:2px 1px gray;
+}
+
+.programma{
+font-family:myFont;
+font-weight:400;
+
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(../fonts/cuprum_italic.ttf);
+}
+
+
+body{
+background-image: url(../images/background.png)
+}
+
+.thumbnail{
+background-image: url(../images/background.png)
+}
+
+#pro{
+border-style: solid;
+    border-color: gray;
+text-align:center;
+}
+
+.skype{
+text-align:left;
+font:italic;
+
+}
+.performance{
+font-weight:600;
+color: #5901b6
+
+}
+
+
