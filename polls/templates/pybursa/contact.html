@@ -25,7 +25,7 @@
 		<nav class="navbar navbar-inverse navbar-static-top">
 			<div class="container-fluid">
 				<div class="navbar-header">
-				  <a class="navbar-brand" href="{% url 'pybursa_index' %}">
+				  <a class="navbar-brand" href="{% url 'index' %}">
 				    <img id='logo_itBursa' alt="Brand" src="{% static '/images/logo1.png' %}">
 				  </a>
 				</div>
@@ -33,9 +33,9 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				  <ul class="nav navbar-nav">
-				    <li><a href="{% url 'pybursa_index' %}">Main </a></li>
-				    <li class="active"><a href="{% url 'pybursa_contact' %}">Contacts</a></li>
-            <li><a href="{% url 'pybursa_student_list' %}">Students</a></li>
+				    <li><a href="{% url 'index' %}">Main </a></li>
+				    <li class="active"><a href="{% url 'contact' %}">Contacts</a></li>
+            <li><a href="{% url 'student_list' %}">Students</a></li>
 				  </ul>
 				  
 				</div><!-- /.navbar-collapse -->
