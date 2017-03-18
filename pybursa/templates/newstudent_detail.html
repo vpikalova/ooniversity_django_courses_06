@@ -1,44 +1,12 @@
-{% load staticfiles %}
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Student Detail</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-</head>
-<body>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{% url 'index' %}">HappyBursa</a>
-        </div>
+{% block title %}HappyBursa{% endblock %}
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="{% url 'index' %}">Main</span></a></li>
-                <li><a href="{% url 'contact' %}">Contacts</a></li>
-                <li class="active"><a href="{% url 'student_list' %}">Students</a></li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
+{% block content %}
 <main class="student-detail">
     <h1 class="student-detail__title">Ivanov Ivan</h1>
     <img src="{% static 'images/Ivan-Dorn.jpg' %}" alt="Student Photo" class="student-detail__image">
-    <a href="student_detail.html" class="student-detail__about">Студент о себе</a>
+    <a href="{% url 'student_detail' %}" class="student-detail__about">Студент о себе</a>
     <div class="table__main-holder">
         <div class="table__wrapper">
             <span class="student-detail__table-title">Students card</span>
@@ -100,5 +68,4 @@
 
 
 </main>
-</body>
-</html>
+{% endblock content %}

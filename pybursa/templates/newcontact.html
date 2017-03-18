@@ -1,40 +1,8 @@
-{% load staticfiles %}
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Contact</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-</head>
-<body>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{% url 'index' %}">HappyBursa</a>
-        </div>
+{% block title %}Contact{% endblock %}
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="{% url 'index' %}">Main</span></a></li>
-                <li class="active"><a href="{% url 'contact' %}">Contacts</a></li>
-                <li><a href="{% url 'student_list' %}">Students</a></li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
+{% block content %}
 <div class="video-background" style="position: fixed; z-index: -99; width: 100%; height: 100%">
     <iframe frameborder="0" height="100%" width="100%" src="https://www.youtube.com/embed/0Xg2PshET_0?autoplay=1&controls=0&showinfo=0&autohide=1"></iframe>
     <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/A-ogMtkeavE" frameborder="0" allowfullscreen></iframe>-->
@@ -65,5 +33,4 @@
         </li>
     </ul>
 </main>
-</body>
-</html>
+{% endblock content %}

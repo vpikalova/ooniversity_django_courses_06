@@ -26,4 +26,5 @@ urlpatterns = [
     url(r'^student_detail/$', student_detail, name='student_detail'),
     url(r'^polls/', include('polls.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^newindex/', new_index, name='new-index')
 ]
