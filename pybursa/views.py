@@ -1,7 +1,6 @@
 from django.shortcuts import render
 
 def index(request):
-    print(render(request, 'index.html'))
     return render(request, 'index.html')
 
 def contact(request):
@@ -12,3 +11,6 @@ def student_list(request):
 
 def student_detail(request):
     return render(request, 'student_detail.html')
+
+def new_index(request):
+    return render(request, 'newindex.html')

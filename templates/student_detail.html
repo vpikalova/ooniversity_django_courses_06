@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,22 +22,22 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">HappyBursa</a>
+            <a class="navbar-brand" href="{% url 'index' %}">HappyBursa</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{% url 'index' %}">Main</span></a></li>
+                <li><a href="{% url 'index' %}">Main</span></a></li>
                 <li><a href="{% url 'contact' %}">Contacts</a></li>
-                <li><a href="{% url 'student_list' %}">Students</a></li>
+                <li class="active"><a href="{% url 'student_list' %}">Students</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
 <main class="student-detail">
     <h1 class="student-detail__title">Ivanov Ivan</h1>
-    <img src="http://www.piterburger.ru/upkeep/uploads/2017/03/Ivan-Dorn.jpg" alt="Student Photo" class="student-detail__image">
+    <img src="{% static 'images/Ivan-Dorn.jpg' %}" alt="Student Photo" class="student-detail__image">
     <a href="student_detail.html" class="student-detail__about">Студент о себе</a>
     <div class="table__main-holder">
         <div class="table__wrapper">
