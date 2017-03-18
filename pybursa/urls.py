@@ -16,7 +16,13 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+from . import views
+
 urlpatterns = [
+    url(r'^$', views.index, name='pybursa_index'),
+    url(r'^contact/$', views.contact, name='pybursa_contact'),
+    url(r'^student_list/$', views.student_list, name='pybursa_student_list'),
+    url(r'^student_detail/$', views.student_detail, name='pybursa_student_detail'),
     url(r'^polls/', include('polls.urls')),
     url(r'^admin/', admin.site.urls),
 ]
