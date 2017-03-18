@@ -2,12 +2,12 @@
 
       <p>Квадратное уроавнение a*x*x + b*x + c = 0</p>
       <ul>
-        <li>a = {{ a }}</li>{{ error_a }}
-        <li>b = {{ b }}</li>{{ error_b }}
-        <li>c = {{ c }}</li>{{ error_c }}
+        <li>a = {{ a }}</li><i>{{ error_a }}</i>
+        <li>b = {{ b }}</li><i>{{ error_b }}</i>
+        <li>c = {{ c }}</li><i>{{ error_c }}</i>
       </ul>
       {% if flag == True %}
-      <p>Дискриминант: {{  descr  }}</p>
-      <p>{{ info  }}</p>
+      <p>Дискриминант: {{ descr }}</p>
+      <p>{{ info }}</p>
       {% endif %}
 
