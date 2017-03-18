@@ -1,9 +1,10 @@
 {% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% block title %}{% endblock title %}</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -11,6 +12,7 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </head>
 <body>
+{% block nav %}
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -34,17 +36,8 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<main class="main">
-    <h1 class="header main__header--course-name">HappyBursa</h1>
-    <div class="inner-wrapper">
-        <h2 class="header header--course-desc">Description - Hardcore Python Course</h2>
-        <strong>Program</strong>
-        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dignissimos dolorum eaque enim eveniet excepturi ipsa maxime, molestiae odio, pariatur quasi quia quis sapiente sunt voluptatem. Cupiditate iure labore quaerat.</p>
-        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dignissimos dolorum eaque enim eveniet excepturi ipsa maxime, molestiae odio, pariatur quasi quia quis sapiente sunt voluptatem. Cupiditate iure labore quaerat.</p>
-        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dignissimos dolorum eaque enim eveniet excepturi ipsa maxime, molestiae odio, pariatur quasi quia quis sapiente sunt voluptatem. Cupiditate iure labore quaerat.</p>
-        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dignissimos dolorum eaque enim eveniet excepturi ipsa maxime, molestiae odio, pariatur quasi quia quis sapiente sunt voluptatem. Cupiditate iure labore quaerat.</p>
-        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dignissimos dolorum eaque enim eveniet excepturi ipsa maxime, molestiae odio, pariatur quasi quia quis sapiente sunt voluptatem. Cupiditate iure labore quaerat.</p>
-    </div>
-</main>
+{% endblock nav %}
+{% block body %}
+{% endblock body %}
 </body>
 </html>
