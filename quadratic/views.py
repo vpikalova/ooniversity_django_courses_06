@@ -14,14 +14,14 @@ def quadratic_results(request):
     }
     errors = False
     for key in vars.keys():
-        if vars[key] is not None:
+        if vars[key] != "":
             try:
                 vars[key] = int(vars[key])
             except ValueError:
-                vars[key] = MSG_NOT_INT
+                vars[key] = vars[key] + "<br />" + MSG_NOT_INT
                 errors = True
         else:
-            vars[key] = MSG_NOT_DEFINED
+            vars[key] = vars[key] + "<br />" + MSG_NOT_DEFINED
             errors = True
     if not errors:
         a = vars['a']
