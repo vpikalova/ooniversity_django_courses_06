@@ -1,37 +1,114 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse
 
-def quadratic_results(request, a, b, c):
-		d = int(b) ** 2 - 4 * int(a) * int(c)
-		if d < 0:
-			return render(request, 'templates/results.html', {'a': a, 'b': b, 'c': c, 'd': d})
-#			return HttpResponse('Квадратное уравнение a*x*x + b*x + c = 0'+ '</br>' + 
-#								'<ul>' +
-#								'<li> a = {}'.format(a) + '</li>' +
-#								'<li> b = {}'.format(b) + '</li>' +
-#								'<li> c = {}'.format(c) + '</li>' +
-#								'</ul>' +
-#								'Дискриминант: {}'.format(d) + '</br></br>' + 
-#								'Дискриминант меньше нуля, квадратное уравнение не имеет действительных решений.')
-#		elif d == 0:
-#			x = (-int(b)+(d)**0.5)/(2*int(a))
-#			return HttpResponse('Квадратное уравнение a*x*x + b*x + c = 0'+ '</br>' + 
-#								'<ul>' +
-#								'<li> a = {}'.format(a) + '</li>' +
-#								'<li> b = {}'.format(b) + '</li>' +
-#								'<li> c = {}'.format(c) + '</li>' +
-#								'</ul>' +
-#								'Дискриминант: {}'.format(d) + '</br></br>' + 
-#								'Дискриминант равен нулю, квадратное уравнение имеет один действительный корень: x1 = x2 = {}'.format(d))
-#		else:
-#			x1 = (-int(b)+(d)**0.5)/(2*int(a))
-#			x2 = (-int(b)-(d)**0.5)/(2*int(a))
-#			return HttpResponse('Квадратное уравнение a*x*x + b*x + c = 0'+ '</br>' + 
-#								'<ul>' +
-#								'<li> a = {}'.format(a) + '</li>' +
-#								'<li> b = {}'.format(b) + '</li>' +
-#								'<li> c = {}'.format(c) + '</li>' +
-#								'</ul>' +
-#								'Дискриминант: {}'.format(d) + '</br></br>' + 
-#								'Квадратное уравнение имеет два действительных корня x1= {}, x2= {}'.format(x1, x2))
-	
+import math
+
+def quadratic_results(request):
+    # print('request: ', request.GET['c'] == '')
+    # return HttpResponse(request.GET)
+
+    data = request.GET
+
+    if not data:
+        return
+
+    is_valid_factors = True
+
+    error_messages = {
+        'not_defined': 'коэффициент не определен',
+        'not_integer': 'коэффициент не целое число',
+        'is_zero': 'коэффициент при первом слагаемом уравнения не может быть равным нулю',
+    }
+
+    result_messages = {
+        'discriminant_text': 'Дискриминант:',
+        'two_roots': 'Квадратное уравнение имеет два действительных корня:',
+        'no_roots': 'Дискриминант меньше нуля, квадратное уравнение не имеет действительных решений.',
+        'one_root': 'Дискриминант равен нулю, квадратное уравнение имеет один действительный корень:',
+    }
+
+    context = {
+        'factors': [],
+        'results': {},
+    }
+
+    a = data['a']
+    b = data['b']
+    c = data['c']
+
+    a_item = {
+        'item_name': 'a',
+        'item_value': a
+    }
+
+    b_item = {
+        'item_name': 'b',
+        'item_value': b
+    }
+
+    c_item = {
+        'item_name': 'c',
+        'item_value': c
+    }
+
+    if a == '':
+        a_item['error_message'] = error_messages['not_defined']
+        is_valid_factors = False
+    else:
+        try:
+            if int(a) == 0:
+                a_item['error_message'] = error_messages['is_zero']
+                is_valid_factors = False
+        except ValueError:
+            a_item['error_message'] = error_messages['not_integer']
+            is_valid_factors = False
+
+    if b == '':
+        b_item['error_message'] = error_messages['not_defined']
+        is_valid_factors = False
+    else:
+        try:
+            int(b)
+        except ValueError:
+            b_item['error_message'] = error_messages['not_integer']
+            is_valid_factors = False
+
+    if c == '':
+        c_item['error_message'] = error_messages['not_defined']
+        is_valid_factors = False
+    else:
+        try:
+            int(c)
+        except ValueError:
+            c_item['error_message'] = error_messages['not_integer']
+            is_valid_factors = False
+
+    context['factors'].append(a_item)
+    context['factors'].append(b_item)
+    context['factors'].append(c_item)
+
+    if is_valid_factors:
+        results = dict()
+
+        A = int(a)
+        B = int(b)
+        C = int(c)
+
+        D = B**2 - 4*A*C
+
+        results['discriminant_text'] = result_messages['discriminant_text']
+        results['discriminant'] = D
+
+        if D < 0:
+            results['root_text'] = result_messages['no_roots']
+        elif D == 0:
+            results['root_text'] = result_messages['one_root']
+            results['x1'] = -B/(2*A)
+        else:
+            results['root_text'] = result_messages['two_roots']
+            results['x1'] = (-B + math.sqrt(B**2 - 4*A*C)) / (2*A)
+            results['x2'] = (-B - math.sqrt(B**2 - 4*A*C)) / (2*A)
+
+        context['results'] = results
+
+    return render(request, 'results.html', context)
