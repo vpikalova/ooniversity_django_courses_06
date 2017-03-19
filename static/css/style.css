@@ -1,0 +1,87 @@
+body {
+  padding-top: 70px;
+  padding-bottom: 20px;
+}
+
+p {
+    word-wrap: break-word;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.greetings {
+	align: "center";
+	color: navy;	
+}
+
+div.thumbnail, h4 {
+	/*align: "center";
+	font-style: bolder;*/
+	font-weight: bolder;
+	color: #038;	
+	text-align: center;
+	text-transform: caption;
+	
+}
+
+.Progam, h2 {
+	text-align: center;
+	text-transform: caption;
+}
+
+
+ol.num {
+counter-reset: myCounter;
+text-align: left;
+}
+ol.num > li {
+list-style: none;
+}
+ol.num > li:before  {
+counter-increment: myCounter;
+content:counter(myCounter);
+color: white;
+background: #2980B9;
+display: inline-block;
+text-align: center;
+margin: 5px 10px;
+line-height: 40px;
+width: 40px;
+height: 40px;
+}
+
+.orgtitle {
+	font-style:bold;
+	font-weight: 600;
+	color: #f44;
+}
+
+.revert {
+	padding-right: 20px !important;
+    padding-left: 20px !important;
+	padding-top: 1px !important;
+    padding-bottom: 30px !important;	
+}
+
+.foot {
+	background-color: #330000;
+	font-weight: bold;
+	color: yellow;
+
+}
+
+.skype {
+	color: green;	
+}
+
+.mail {
+	color: maroon;	
+
+}
+
+.coolshadow {
+	color: SkyBlue !important;
+    text-shadow: 1px 1px 2px black, 0 0 15px blue, 0 0 5px darkblue;
+}
