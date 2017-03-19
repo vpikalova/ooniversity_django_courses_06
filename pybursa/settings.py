@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 	'polls.apps.PollsConfig',
+	'quadratic',
 ]
 
 MIDDLEWARE = [
@@ -127,7 +128,10 @@ STATICFILES_DIRS = [
 TEMPLATES = [
 {'APP_DIRS': True,
   'BACKEND': 'django.template.backends.django.DjangoTemplates',
-  'DIRS': [os.path.join(BASE_DIR, "templates"),],
+  'DIRS': [
+	os.path.join(BASE_DIR, "templates"), 
+	'Home/Documents/ITBursa/week5/ooniversity_django_courses_06/quadratic',
+	],
   'OPTIONS': {'context_processors': ['django.template.context_processors.debug',
                                      'django.template.context_processors.request',
                                      'django.contrib.auth.context_processors.auth',
