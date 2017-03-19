@@ -32,24 +32,23 @@ def quadratic_results(request):
     error_c = validation(request.GET['c'])
     flag = False
     descr = False
-    roots = ''
-    info = ''
+    messages = ''
     x1 = ''
     x2 = ''
     if error_a == '' and error_b == '' and error_c == '':
         flag = True
         descr = int(b) ** 2 - 4 * int(a) * int(c)
         if descr < 0:
-            info = "Дискриминант меньше нуля, квадратное уравнение не имеет действительных решений."
+            messages = "Дискриминант меньше нуля, квадратное уравнение не имеет действительных решений."
         elif descr == 0:
             x1 = x2 = (-int(b) + int(descr) ** (1 / 2)) / 2 * int(a)
-            info = "Дискриминант равен нулю, квадратное уравнение имеет один действительный корень: x1 = x2 = %s" %x1
+            messages = "Дискриминант равен нулю, квадратное уравнение имеет один действительный корень: x1 = x2 = %s" %x1
         elif descr > 0:
             x1 = (-int(b) + int(descr) ** (1 / 2)) / 2 * int(a)
             x2 = (-int(b) - int(descr) ** (1 / 2)) / 2 * int(a)
-            info = "Квадратное уравнение имеет два действительных корня: x1 = %s, x2 = %s" %(x1, x2)     
+            messages = "Квадратное уравнение имеет два действительных корня: x1 = %s, x2 = %s" %(x1, x2)     
 
-    context = {'a': a, 'b': b, 'c': c, 'error_a': error_a, 'error_b': error_b, 'error_c': error_c, 'descr': descr, 'roots': roots, 'flag' : flag, 'info': info}
+    context = {'a': a, 'b': b, 'c': c, 'error_a': error_a, 'error_b': error_b, 'error_c': error_c, 'descr': descr, 'flag' : flag, 'messages': messages}
     return render(request, 'quadratic/results.html', context)
 
 
