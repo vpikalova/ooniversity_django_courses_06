@@ -21,25 +21,23 @@
   </head>
   <body>
 
-		<nav class="navbar navbar-inverse navbar-static-top">
-			<div class="container-fluid">
-				<div class="navbar-header">
-				  <a class="navbar-brand" href="{% url 'index' %}">
-				    <img id='logo_itBursa' alt="Brand" src="{% static '/images/logo1.png' %}">
-				  </a>
-				</div>
-
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				  <ul class="nav navbar-nav">
-				    <li class="active"><a href="{% url 'index' %}">Main</a></li>
-				    <li><a href="{% url 'contact' %}">Contacts</a></li>
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container-fluid">
+       <div class="navbar-header">
+          <a class="navbar-brand" href="{% url 'index' %}">
+            <img id='logo_itBursa' alt="Brand" src="{% static '/images/logo1.png' %}">
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="{% url 'index' %}">Main</a></li>
+            <li><a href="{% url 'contact' %}">Contacts</a></li>
             <li><a href="{% url 'student_list' %}">Students</a></li>
-				  </ul>
-				  
-				</div><!-- /.navbar-collapse -->
-			</div><!-- /.container-fluid -->
-		</nav>
+            <li><a href="{% url 'results' %}?a=2&b=3&c=5">Equation</a></li>
+          </ul>			  
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
 
 
     <div class="container">
