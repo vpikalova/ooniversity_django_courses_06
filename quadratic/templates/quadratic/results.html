@@ -4,18 +4,21 @@
 
 {% block content %}
     <div class="container">
-      <h1>Результат</h1>
-      <p>Квадратное уравнение a*x*x + b*x + c = 0</p>
-      <ul>
-        <li>a = {{ a }}</li>
-        <p>{{ error_message_a }}</p>
-        <li>b = {{ b }}</li>
-        <p>{{ error_message_b }}</p>
-        <li>c = {{ c }}</li>
-        <p>{{ error_message_c }}</p>
-      </ul>
-      <p>{{ discriminant }}</p>
-      <p>{{ result }}</p>
+        <h1>Результат</h1>
+        <span>Квадратное уравнение a*x*x + b*x + c = 0</span>
+        <ul class="quadratic-list">
+            <li>a = {{ a }}
+                <div>{{ error_message_a }}</div>
+            </li>
+            <li>b = {{ b }}
+                <div>{{ error_message_b }}</div>
+            </li>
+            <li>c = {{ c }}
+                <div>{{ error_message_c }}</div>
+            </li>
+        </ul>
+        <span>{{ discriminant }}</span>
+        <span>{{ result }}</span>
     </div>
 {% endblock content %}>
 
