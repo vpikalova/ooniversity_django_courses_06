@@ -2,9 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 
 def quadratic_results(request, a, b, c):
-	return render(request, 'templates/results.html', {'a': a, 'b': b, 'c': c})
-#		d = int(b) ** 2 - 4 * int(a) * int(c)
-#		if d < 0:
+		d = int(b) ** 2 - 4 * int(a) * int(c)
+		if d < 0:
+			return render(request, 'templates/results.html', {'a': a, 'b': b, 'c': c, 'd': d})
 #			return HttpResponse('Квадратное уравнение a*x*x + b*x + c = 0'+ '</br>' + 
 #								'<ul>' +
 #								'<li> a = {}'.format(a) + '</li>' +
