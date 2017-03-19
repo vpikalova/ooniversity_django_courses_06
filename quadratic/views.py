@@ -22,6 +22,7 @@ def quadratic_results(request):
                 errors = True
         else:
             vars[key] = MSG_NOT_DEFINED
+            errors = True
     if not errors:
         a = vars['a']
         b = vars['b']
