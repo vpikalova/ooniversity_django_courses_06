@@ -8,9 +8,9 @@ MSG_NOT_INT = 'коэффициент не целое число'
 
 def quadratic_results(request):
     vars = {
-        'a': request.GET.get('a'),
-        'b': request.GET.get('b'),
-        'c': request.GET.get('c')
+        'a': request.GET.get('a', ''),
+        'b': request.GET.get('b', ''),
+        'c': request.GET.get('c', '')
     }
     errors = False
     for key in vars.keys():
