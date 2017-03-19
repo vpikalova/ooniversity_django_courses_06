@@ -15,13 +15,13 @@
         {% if err_c %}<span><em>{{ err_c }}</em></span>{% endif %}
       </ul>
 {% if discriminant > 0 %}
-    Дискриминант: {{discriminant}}
+    Дискриминант: {{discriminant}}<br>
     Квадратное уравнение имеет два действительных корня: x1 = {{root1}}, x2 = {{root2}}'
 {% elif discriminant < 0 %}
-    Дискриминант: {{discriminant}}
+    Дискриминант: {{discriminant}}<br>
     Дискриминант меньше нуля, квадратное уравнение не имеет действительных решений.
 {% elif discriminant == 0 %}
-    Дискриминант: {{discriminant}}
+    Дискриминант: {{discriminant}}<br>
     Дискриминант равен нулю, квадратное уравнение имеет один действительный корень: x1 = x2 = {{root1}}
 {% endif %}
 </body>
