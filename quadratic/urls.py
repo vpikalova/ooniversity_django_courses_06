@@ -9,5 +9,5 @@ def index(request):
 
 urlpatterns = [
     url(r'^$', index),
-    url(r'^results/', quadratic_results),
+    url(r'^results/', quadratic_results, name='results'),
 ]
