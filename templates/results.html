@@ -1,0 +1,20 @@
+Квадратное уровнение a*x*x + b*x + c = 0
+
+<ul>
+	<li>a = {{a}}</li>
+	{% if info_a %}{{info_a}}<br>{% endif %}
+
+	<li>b = {{b}}</li>
+	{% if info_b %}{{info_b}}<br>{% endif %}
+
+	<li>c = {{c}}</li>
+	{% if info_c %}{{info_c}}<br>{% endif %}
+</ul>
+
+{% if discriminant == 0 or discriminant %}
+	Дискриминант: {{discriminant}} 
+{% endif %}
+
+<br>
+<br>
+{{message}}
