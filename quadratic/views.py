@@ -56,6 +56,7 @@ def quadratic_results(request):
             except ValueError:
                 x1=roots(D,values_dict['a'],values_dict['b'])[0] # = 0
         
-    context = {**errors_dict, **values_dict,'discriminant': D,'root1': x1,'root2': x2}
-#    print(context)
+    context = {**errors_dict, **values_dict,'discriminant': D,'root1': str(x1),'root2': str(x2)}
+    print(context)
+    print(type(x1))
     return render(request, 'results.html', context)
