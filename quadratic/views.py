@@ -103,11 +103,11 @@ def quadratic_results(request):
             results['root_text'] = result_messages['no_roots']
         elif D == 0:
             results['root_text'] = result_messages['one_root']
-            results['x1'] = round(-B/(2*A), 1)
+            results['x1'] = -B/(2*A)
         else:
             results['root_text'] = result_messages['two_roots']
-            results['x1'] = round((-B + math.sqrt(B**2 - 4*A*C)) / (2*A), 1)
-            results['x2'] = round((-B - math.sqrt(B**2 - 4*A*C)) / (2*A), 1)
+            results['x1'] = (-B + math.sqrt(B**2 - 4*A*C)) / (2*A)
+            results['x2'] = (-B - math.sqrt(B**2 - 4*A*C)) / (2*A)
 
         context['results'] = results
 
