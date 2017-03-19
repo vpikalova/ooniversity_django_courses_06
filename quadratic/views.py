@@ -3,10 +3,9 @@
 
 from django.shortcuts import render
 from math import sqrt
-from django.http import QueryDict
-
 
 def quadratic_results(request):
+    context = {}
 
     def validate(data):
         number = data
@@ -21,40 +20,32 @@ def quadratic_results(request):
         return error_message, number
 
     arguments_from_url = request.GET
-    a = arguments_from_url['a'] if arguments_from_url.__contains__('a') else str()
-    b = arguments_from_url['b'] if arguments_from_url.__contains__('b') else str()
-    c = arguments_from_url['c'] if arguments_from_url.__contains__('c') else str()
-    error_message_a, a = validate(a)
-    error_message_b, b = validate(b)
-    error_message_c, c = validate(c)
-
+    context['a'] = arguments_from_url['a'] if arguments_from_url.__contains__('a') else str()
+    context['b'] = arguments_from_url['b'] if arguments_from_url.__contains__('b') else str()
+    context['c'] = arguments_from_url['c'] if arguments_from_url.__contains__('c') else str()
+    context['error_message_a'], a = validate(context['a'])
+    context['error_message_b'], b = validate(context['b'])
+    context['error_message_c'], c = validate(context['c'])
     if a == 0:
-        error_message_a = 'коэффициент при первом слагаемом уравнения не может быть равным нулю'
-        discriminant, result = str()
+        context['error_message_a'] = 'коэффициент при первом слагаемом уравнения не может быть равным нулю'
+        context['discriminant'] = str()
+        context['result'] = str()
     elif a == str() or b == str() or c == str():
-        discriminant, result = str()
+        context['discriminant'] = str()
+        context['result'] = str()
     else:
-        discriminant = b * b - 4 * a * c
-        if discriminant < 0:
-            result = 'Дискриминант меньше нуля, квадратное уравнение не имеет действительных решений.'
-        elif discriminant == 0:
+        context['discriminant'] = b * b - 4 * a * c
+        if context['discriminant'] < 0:
+            context['result'] = 'Дискриминант меньше нуля, квадратное уравнение не имеет действительных решений.'
+        elif context['discriminant'] == 0:
             x1 = -b / (2 * a)
-            result = 'Дискриминант равен нулю, квадратное уравнение имеет один действительный корень: x1 = x2 = {x1}'.format(x1=str(x1))
-        elif discriminant > 0:
-            x1 = (-b + sqrt(discriminant)) / (2 * a)
-            x2 = (-b - sqrt(discriminant)) / (2 * a)
-            result = 'Квадратное уравнение имеет два действительных корня: x1 = {x1}, x2 = {x2}'.format(x1=str(x1), x2=str(x2))
+            context['result'] = 'Дискриминант равен нулю, квадратное уравнение имеет один действительный корень: x1 = x2 = {x1}'.format(x1=str(x1))
+        elif context['discriminant'] > 0:
+            x1 = (-b + sqrt(context['discriminant'])) / (2 * a)
+            x2 = (-b - sqrt(context['discriminant'])) / (2 * a)
+            context['result'] = 'Квадратное уравнение имеет два действительных корня: x1 = {x1}, x2 = {x2}'.format(x1=str(x1), x2=str(x2))
 
-        if discriminant != str():
-            discriminant = 'Дискриминант: {discriminant}'.format(discriminant=str(discriminant))
+        if context['discriminant'] != str():
+            context['discriminant'] = 'Дискриминант: {discriminant}'.format(discriminant=str(context['discriminant']))
 
-    return render(request, 'quadratic/results.html', {
-        'a': a,
-        'b': b,
-        'c': c,
-        'error_message_a': error_message_a,
-        'error_message_b': error_message_b,
-        'error_message_c': error_message_c,
-        'discriminant': discriminant,
-        'result': result
-    })
+    return render(request, 'quadratic/results.html', context)
