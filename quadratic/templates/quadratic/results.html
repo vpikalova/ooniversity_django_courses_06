@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}HappyBursa{% endblock %}
+
+{% block content %}
+    <div class="container">
+      <h1 class="my_descript">Equation</h1>
+      <p>Квадратное уравнение a*x*x + b*x + c = 0</p>
+      <ul>
+        <li>a = {{ a }}</li>
+        <p>{{ error_message_a }}</p>
+        <li>b = {{ b }}</li>
+        <p>{{ error_message_b }}</p>
+        <li>c = {{ c }}</li>
+        <p>{{ error_message_c }}</p>
+      </ul>
+      <p>{{ discriminant }}</p>
+      <p>{{ result }}</p>
+    </div>
+{% endblock content %}>
+
+
+
+
