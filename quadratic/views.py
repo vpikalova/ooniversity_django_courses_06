@@ -10,45 +10,73 @@ def quadratic_results(request):
     b = request.GET['b']
     c = request.GET['c']
     error = ''
+    error_a = ''
+    error_b = ''
+    error_c = ''
     x = 0
     x1 = 0
     x2 = 0
-    descr = 0
+    descr = None
     out_string = ''
-    if a is None or b is None or c is None :
-        error = 'коэффициент не определен'
-    '''elif type(a) != int or  type(b) != int or  type(c) != int:'''
-    try:
-        a = int(a)
-    except TypeError:
-        error = 'коэффициент не целое число'
-    except ValueError:
-        error = 'коэффициент не определен'
-    try:
-        b = int(b)
-    except TypeError:
-        error = 'коэффициент не целое число'
-    try:
-        c = int(c)
-    except TypeError:
-        error = 'коэффициент не целое число'
-        
-    if a == 0:
-        error = 'коэффициент при первом слагаемом уравнения не может быть равным нулю'    
-    try:   
-        descr = b ** 2 - 4 * a * c
-    except ValueError:
-        error = 'коэффициент не определен'
-    if descr == 0:
-        x = (-int(b) + math.sqrt(descr)) / (2 * int(a))
-        out_string =  'Дискриминант: 0'
-    elif descr < 0 :
-        out_string =  'Дискриминант меньше нуля, квадратное уравнение не имеет действительных решений.'
+    if not a:
+        error_a = 'коэффициент не определен'
+    
     else:
-        x1 = (-b + math.sqrt(descr)) / (2 * a) 
-        x2 = (-b - math.sqrt(descr)) / (2 * a)
+
+        try:
+            a = int(a)
         
-    return render(request, "results.html", {"input_a" :a, "input_b":b, "input_c":c, 'x1':x1, 'x2':x2, 'error':error, 'out_string':out_string, 'descr':descr })
+        except ValueError:
+            error_a = 'коэффициент не целое число'
+        else:
+            a = int(a)
+    print(error)
+
+    if not b:
+        error_b = 'коэффициент не определен'
+    
+    else:
+
+        try:
+            b = int(b)
+        
+        except ValueError:
+            error_b = 'коэффициент не целое число'
+        else:
+            b = int(b)
+    print(error)
+    
+    if not c:
+        error_c = 'коэффициент не определен'
+    
+    else:
+
+        try:
+            c = int(c)
+        
+        except ValueError:
+            error_c = 'коэффициент не целое число'
+        else:
+            c = int(c)
+    print(error)
+    if a == 0:
+        error_a = 'коэффициент при первом слагаемом уравнения не может быть равным нулю'    
+        
+    if type(a) ==int  and type(b)==int and type(c) == int and a!=0:
+
+        descr = b ** 2 - 4 * a * c
+    
+        if descr == 0:
+            x = (-int(b) + math.sqrt(descr)) / (2 * int(a))
+            out_string =  'Дискриминант: 0'
+        elif descr < 0 :
+            out_string =  'Дискриминант меньше нуля, квадратное уравнение не имеет действительных решений.'
+        else:
+            x1 = (-b + math.sqrt(descr)) / (2 * a) 
+            x2 = (-b - math.sqrt(descr)) / (2 * a)
+        
+    return render(request, "results.html", {"input_a" :a, "input_b":b, "input_c":c, 'x1':x1, 'x2':x2, 'error':error, 'out_string':out_string, 'descr':descr, 'error_a':error_a, 'error_b':error_b, 'error_c':error_c })
+
 
 '''def quadratic_results(request):
     a = int(request.GET['a'])
