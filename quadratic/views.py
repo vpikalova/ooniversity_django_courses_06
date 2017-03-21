@@ -68,12 +68,13 @@ def quadratic_results(request):
     
         if descr == 0:
             x = (-int(b) + math.sqrt(descr)) / (2 * int(a))
-            out_string =  'Дискриминант: 0'
+            out_string =  'Дискриминант равен нулю, квадратное уравнение имеет один действительный корень: x1 = x2 = %d' %(x)
         elif descr < 0 :
             out_string =  'Дискриминант меньше нуля, квадратное уравнение не имеет действительных решений.'
         else:
             x1 = (-b + math.sqrt(descr)) / (2 * a) 
             x2 = (-b - math.sqrt(descr)) / (2 * a)
+            out_string =  'Квадратное уравнение имеет два действительных корня: x1 = %d, x2 = %d' % (x1, x2) 
         
     return render(request, "results.html", {"input_a" :a, "input_b":b, "input_c":c, 'x1':x1, 'x2':x2, 'error':error, 'out_string':out_string, 'descr':descr, 'error_a':error_a, 'error_b':error_b, 'error_c':error_c })
 
